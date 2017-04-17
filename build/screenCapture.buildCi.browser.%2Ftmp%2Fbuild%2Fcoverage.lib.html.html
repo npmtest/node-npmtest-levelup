@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Code coverage report for node-npmtest-levelup/levelup/lib/levelup.js</title>
+<html lang="en"><head>
+    <title>Code coverage report for node-npmtest-levelup/node_modules/levelup/lib/levelup.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -194,7 +192,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-levelup">npmtest-levelup (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-levelup/levelup/lib/levelup.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-levelup/node_modules/levelup/lib/levelup.js</span></h1>
     <h2>
         
         Statements: <span class="metric">13.64% <small>(27 / 198)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-levelup/levelup/lib/</a> &#187; levelup.js</div>
+    <div class="path"><a href="../../../../index.html">All files</a> » <a href="index.html">node-npmtest-levelup/node_modules/levelup/lib/</a> » levelup.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -1046,8 +1044,8 @@ var EventEmitter        = require('events').EventEmitter
   , dispatchError       = util.dispatchError
   , isDefined           = util.isDefined
 &nbsp;
-<span class="fstat-no" title="function not covered" >function getCallback (options, callback) {</span>
-<span class="cstat-no" title="statement not covered" >  return typeof options == 'function' ? options : callback</span>
+<span class="fstat-no" title="function not covered">function getCallback (options, callback) {</span>
+<span class="cstat-no" title="statement not covered">  return typeof options == 'function' ? options : callback</span>
 }
 &nbsp;
 // Possible LevelUP#_status values:
@@ -1058,150 +1056,150 @@ var EventEmitter        = require('events').EventEmitter
 //  - 'closed'  - database has been successfully closed, should not be
 //                 used except for another open() operation
 &nbsp;
-<span class="fstat-no" title="function not covered" >function LevelUP (location, options, callback) {</span>
-<span class="cstat-no" title="statement not covered" >  if (!(this instanceof LevelUP))</span>
-<span class="cstat-no" title="statement not covered" >    return new LevelUP(location, options, callback)</span>
+<span class="fstat-no" title="function not covered">function LevelUP (location, options, callback) {</span>
+<span class="cstat-no" title="statement not covered">  if (!(this instanceof LevelUP))</span>
+<span class="cstat-no" title="statement not covered">    return new LevelUP(location, options, callback)</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  var error</span>
+<span class="cstat-no" title="statement not covered">  var error</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  EventEmitter.call(this)</span>
-<span class="cstat-no" title="statement not covered" >  this.setMaxListeners(Infinity)</span>
+<span class="cstat-no" title="statement not covered">  EventEmitter.call(this)</span>
+<span class="cstat-no" title="statement not covered">  this.setMaxListeners(Infinity)</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (typeof location == 'function') {</span>
-<span class="cstat-no" title="statement not covered" >    options = typeof options == 'object' ? options : {}</span>
-<span class="cstat-no" title="statement not covered" >    options.db = location</span>
-<span class="cstat-no" title="statement not covered" >    location = null</span>
-  } else <span class="cstat-no" title="statement not covered" >if (typeof location == 'object' &amp;&amp; typeof location.db == 'function') {</span>
-<span class="cstat-no" title="statement not covered" >    options = location</span>
-<span class="cstat-no" title="statement not covered" >    location = null</span>
+<span class="cstat-no" title="statement not covered">  if (typeof location == 'function') {</span>
+<span class="cstat-no" title="statement not covered">    options = typeof options == 'object' ? options : {}</span>
+<span class="cstat-no" title="statement not covered">    options.db = location</span>
+<span class="cstat-no" title="statement not covered">    location = null</span>
+  } else <span class="cstat-no" title="statement not covered">if (typeof location == 'object' &amp;&amp; typeof location.db == 'function') {</span>
+<span class="cstat-no" title="statement not covered">    options = location</span>
+<span class="cstat-no" title="statement not covered">    location = null</span>
   }
 &nbsp;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (typeof options == 'function') {</span>
-<span class="cstat-no" title="statement not covered" >    callback = options</span>
-<span class="cstat-no" title="statement not covered" >    options  = {}</span>
+<span class="cstat-no" title="statement not covered">  if (typeof options == 'function') {</span>
+<span class="cstat-no" title="statement not covered">    callback = options</span>
+<span class="cstat-no" title="statement not covered">    options  = {}</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if ((!options || typeof options.db != 'function') &amp;&amp; typeof location != 'string') {</span>
-<span class="cstat-no" title="statement not covered" >    error = new InitializationError(</span>
+<span class="cstat-no" title="statement not covered">  if ((!options || typeof options.db != 'function') &amp;&amp; typeof location != 'string') {</span>
+<span class="cstat-no" title="statement not covered">    error = new InitializationError(</span>
         'Must provide a location for the database')
-<span class="cstat-no" title="statement not covered" >    if (callback) {</span>
-<span class="cstat-no" title="statement not covered" >      return process.nextTick(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >        callback(error)</span>
+<span class="cstat-no" title="statement not covered">    if (callback) {</span>
+<span class="cstat-no" title="statement not covered">      return process.nextTick(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">        callback(error)</span>
       })
     }
-<span class="cstat-no" title="statement not covered" >    throw error</span>
+<span class="cstat-no" title="statement not covered">    throw error</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  options      = getOptions(options)</span>
-<span class="cstat-no" title="statement not covered" >  this.options = extend(defaultOptions, options)</span>
-<span class="cstat-no" title="statement not covered" >  this._codec = new Codec(this.options)</span>
-<span class="cstat-no" title="statement not covered" >  this._status = 'new'</span>
+<span class="cstat-no" title="statement not covered">  options      = getOptions(options)</span>
+<span class="cstat-no" title="statement not covered">  this.options = extend(defaultOptions, options)</span>
+<span class="cstat-no" title="statement not covered">  this._codec = new Codec(this.options)</span>
+<span class="cstat-no" title="statement not covered">  this._status = 'new'</span>
   // set this.location as enumerable but not configurable or writable
-<span class="cstat-no" title="statement not covered" >  prr(this, 'location', location, 'e')</span>
+<span class="cstat-no" title="statement not covered">  prr(this, 'location', location, 'e')</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  this.open(callback)</span>
+<span class="cstat-no" title="statement not covered">  this.open(callback)</span>
 }
 &nbsp;
 inherits(LevelUP, EventEmitter)
 &nbsp;
-LevelUP.prototype.open = <span class="fstat-no" title="function not covered" >function (callback) {</span>
-<span class="cstat-no" title="statement not covered" >  var self = this</span>
+LevelUP.prototype.open = <span class="fstat-no" title="function not covered">function (callback) {</span>
+<span class="cstat-no" title="statement not covered">  var self = this</span>
     , dbFactory
     , db
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (this.isOpen()) {</span>
-<span class="cstat-no" title="statement not covered" >    if (callback)</span>
-<span class="cstat-no" title="statement not covered" >      process.nextTick(<span class="fstat-no" title="function not covered" >function () {</span> <span class="cstat-no" title="statement not covered" >callback(null, self) }</span>)</span>
-<span class="cstat-no" title="statement not covered" >    return this</span>
+<span class="cstat-no" title="statement not covered">  if (this.isOpen()) {</span>
+<span class="cstat-no" title="statement not covered">    if (callback)</span>
+<span class="cstat-no" title="statement not covered">      process.nextTick(<span class="fstat-no" title="function not covered">function () {</span> <span class="cstat-no" title="statement not covered">callback(null, self) }</span>)</span>
+<span class="cstat-no" title="statement not covered">    return this</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (this._isOpening()) {</span>
-<span class="cstat-no" title="statement not covered" >    return callback &amp;&amp; this.once(</span>
+<span class="cstat-no" title="statement not covered">  if (this._isOpening()) {</span>
+<span class="cstat-no" title="statement not covered">    return callback &amp;&amp; this.once(</span>
         'open'
-      , <span class="fstat-no" title="function not covered" >function () {</span> <span class="cstat-no" title="statement not covered" >callback(null, self) }</span>
+      , <span class="fstat-no" title="function not covered">function () {</span> <span class="cstat-no" title="statement not covered">callback(null, self) }</span>
     )
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  this.emit('opening')</span>
+<span class="cstat-no" title="statement not covered">  this.emit('opening')</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  this._status = 'opening'</span>
-<span class="cstat-no" title="statement not covered" >  this.db      = new DeferredLevelDOWN(this.location)</span>
-<span class="cstat-no" title="statement not covered" >  dbFactory    = this.options.db || getLevelDOWN()</span>
-<span class="cstat-no" title="statement not covered" >  db           = dbFactory(this.location)</span>
+<span class="cstat-no" title="statement not covered">  this._status = 'opening'</span>
+<span class="cstat-no" title="statement not covered">  this.db      = new DeferredLevelDOWN(this.location)</span>
+<span class="cstat-no" title="statement not covered">  dbFactory    = this.options.db || getLevelDOWN()</span>
+<span class="cstat-no" title="statement not covered">  db           = dbFactory(this.location)</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  db.open(this.options, <span class="fstat-no" title="function not covered" >function (err) {</span></span>
-<span class="cstat-no" title="statement not covered" >    if (err) {</span>
-<span class="cstat-no" title="statement not covered" >      return dispatchError(self, new OpenError(err), callback)</span>
+<span class="cstat-no" title="statement not covered">  db.open(this.options, <span class="fstat-no" title="function not covered">function (err) {</span></span>
+<span class="cstat-no" title="statement not covered">    if (err) {</span>
+<span class="cstat-no" title="statement not covered">      return dispatchError(self, new OpenError(err), callback)</span>
     } else {
-<span class="cstat-no" title="statement not covered" >      self.db.setDb(db)</span>
-<span class="cstat-no" title="statement not covered" >      self.db = db</span>
-<span class="cstat-no" title="statement not covered" >      self._status = 'open'</span>
-<span class="cstat-no" title="statement not covered" >      if (callback)</span>
-<span class="cstat-no" title="statement not covered" >        callback(null, self)</span>
-<span class="cstat-no" title="statement not covered" >      self.emit('open')</span>
-<span class="cstat-no" title="statement not covered" >      self.emit('ready')</span>
+<span class="cstat-no" title="statement not covered">      self.db.setDb(db)</span>
+<span class="cstat-no" title="statement not covered">      self.db = db</span>
+<span class="cstat-no" title="statement not covered">      self._status = 'open'</span>
+<span class="cstat-no" title="statement not covered">      if (callback)</span>
+<span class="cstat-no" title="statement not covered">        callback(null, self)</span>
+<span class="cstat-no" title="statement not covered">      self.emit('open')</span>
+<span class="cstat-no" title="statement not covered">      self.emit('ready')</span>
     }
   })
 }
 &nbsp;
-LevelUP.prototype.close = <span class="fstat-no" title="function not covered" >function (callback) {</span>
-<span class="cstat-no" title="statement not covered" >  var self = this</span>
+LevelUP.prototype.close = <span class="fstat-no" title="function not covered">function (callback) {</span>
+<span class="cstat-no" title="statement not covered">  var self = this</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (this.isOpen()) {</span>
-<span class="cstat-no" title="statement not covered" >    this._status = 'closing'</span>
-<span class="cstat-no" title="statement not covered" >    this.db.close(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >      self._status = 'closed'</span>
-<span class="cstat-no" title="statement not covered" >      self.emit('closed')</span>
-<span class="cstat-no" title="statement not covered" >      if (callback)</span>
-<span class="cstat-no" title="statement not covered" >        callback.apply(null, arguments)</span>
+<span class="cstat-no" title="statement not covered">  if (this.isOpen()) {</span>
+<span class="cstat-no" title="statement not covered">    this._status = 'closing'</span>
+<span class="cstat-no" title="statement not covered">    this.db.close(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">      self._status = 'closed'</span>
+<span class="cstat-no" title="statement not covered">      self.emit('closed')</span>
+<span class="cstat-no" title="statement not covered">      if (callback)</span>
+<span class="cstat-no" title="statement not covered">        callback.apply(null, arguments)</span>
     })
-<span class="cstat-no" title="statement not covered" >    this.emit('closing')</span>
-<span class="cstat-no" title="statement not covered" >    this.db = new DeferredLevelDOWN(this.location)</span>
-  } else <span class="cstat-no" title="statement not covered" >if (this._status == 'closed' &amp;&amp; callback) {</span>
-<span class="cstat-no" title="statement not covered" >    return process.nextTick(callback)</span>
-  } else <span class="cstat-no" title="statement not covered" >if (this._status == 'closing' &amp;&amp; callback) {</span>
-<span class="cstat-no" title="statement not covered" >    this.once('closed', callback)</span>
-  } else <span class="cstat-no" title="statement not covered" >if (this._isOpening()) {</span>
-<span class="cstat-no" title="statement not covered" >    this.once('open', <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >      self.close(callback)</span>
+<span class="cstat-no" title="statement not covered">    this.emit('closing')</span>
+<span class="cstat-no" title="statement not covered">    this.db = new DeferredLevelDOWN(this.location)</span>
+  } else <span class="cstat-no" title="statement not covered">if (this._status == 'closed' &amp;&amp; callback) {</span>
+<span class="cstat-no" title="statement not covered">    return process.nextTick(callback)</span>
+  } else <span class="cstat-no" title="statement not covered">if (this._status == 'closing' &amp;&amp; callback) {</span>
+<span class="cstat-no" title="statement not covered">    this.once('closed', callback)</span>
+  } else <span class="cstat-no" title="statement not covered">if (this._isOpening()) {</span>
+<span class="cstat-no" title="statement not covered">    this.once('open', <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">      self.close(callback)</span>
     })
   }
 }
 &nbsp;
-LevelUP.prototype.isOpen = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >  return this._status == 'open'</span>
+LevelUP.prototype.isOpen = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">  return this._status == 'open'</span>
 }
 &nbsp;
-LevelUP.prototype._isOpening = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >  return this._status == 'opening'</span>
+LevelUP.prototype._isOpening = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">  return this._status == 'opening'</span>
 }
 &nbsp;
-LevelUP.prototype.isClosed = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >  return (/^clos/).test(this._status)</span>
+LevelUP.prototype.isClosed = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">  return (/^clos/).test(this._status)</span>
 }
 &nbsp;
-<span class="fstat-no" title="function not covered" >function maybeError(db, options, callback) {</span>
-<span class="cstat-no" title="statement not covered" >  if (!db._isOpening() &amp;&amp; !db.isOpen()) {</span>
-<span class="cstat-no" title="statement not covered" >    dispatchError(</span>
+<span class="fstat-no" title="function not covered">function maybeError(db, options, callback) {</span>
+<span class="cstat-no" title="statement not covered">  if (!db._isOpening() &amp;&amp; !db.isOpen()) {</span>
+<span class="cstat-no" title="statement not covered">    dispatchError(</span>
         db
       , new ReadError('Database is not open')
       , callback
     )
-<span class="cstat-no" title="statement not covered" >    return true</span>
+<span class="cstat-no" title="statement not covered">    return true</span>
   }
 }
 &nbsp;
-<span class="fstat-no" title="function not covered" >function writeError (db, message, callback) {</span>
-<span class="cstat-no" title="statement not covered" >  dispatchError(</span>
+<span class="fstat-no" title="function not covered">function writeError (db, message, callback) {</span>
+<span class="cstat-no" title="statement not covered">  dispatchError(</span>
       db
      , new WriteError(message)
      , callback
   )
 }
 &nbsp;
-<span class="fstat-no" title="function not covered" >function readError (db, message, callback) {</span>
-<span class="cstat-no" title="statement not covered" >  dispatchError(</span>
+<span class="fstat-no" title="function not covered">function readError (db, message, callback) {</span>
+<span class="cstat-no" title="statement not covered">  dispatchError(</span>
       db
      , new ReadError(message)
      , callback
@@ -1209,196 +1207,196 @@ LevelUP.prototype.isClosed = <span class="fstat-no" title="function not covered"
 }
 &nbsp;
 &nbsp;
-LevelUP.prototype.get = <span class="fstat-no" title="function not covered" >function (key_, options, callback) {</span>
-<span class="cstat-no" title="statement not covered" >  var self = this</span>
+LevelUP.prototype.get = <span class="fstat-no" title="function not covered">function (key_, options, callback) {</span>
+<span class="cstat-no" title="statement not covered">  var self = this</span>
     , key
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  callback = getCallback(options, callback)</span>
+<span class="cstat-no" title="statement not covered">  callback = getCallback(options, callback)</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (maybeError(this, options, callback))</span>
-<span class="cstat-no" title="statement not covered" >    return</span>
+<span class="cstat-no" title="statement not covered">  if (maybeError(this, options, callback))</span>
+<span class="cstat-no" title="statement not covered">    return</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (key_ === null || key_ === undefined || 'function' !== typeof callback)</span>
-<span class="cstat-no" title="statement not covered" >    return readError(this</span>
+<span class="cstat-no" title="statement not covered">  if (key_ === null || key_ === undefined || 'function' !== typeof callback)</span>
+<span class="cstat-no" title="statement not covered">    return readError(this</span>
       , 'get() requires key and callback arguments', callback)
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  options = util.getOptions(options)</span>
-<span class="cstat-no" title="statement not covered" >  key = this._codec.encodeKey(key_, options)</span>
+<span class="cstat-no" title="statement not covered">  options = util.getOptions(options)</span>
+<span class="cstat-no" title="statement not covered">  key = this._codec.encodeKey(key_, options)</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  options.asBuffer = this._codec.valueAsBuffer(options)</span>
+<span class="cstat-no" title="statement not covered">  options.asBuffer = this._codec.valueAsBuffer(options)</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  this.db.get(key, options, <span class="fstat-no" title="function not covered" >function (err, value) {</span></span>
-<span class="cstat-no" title="statement not covered" >    if (err) {</span>
-<span class="cstat-no" title="statement not covered" >      if ((/notfound/i).test(err) || err.notFound) {</span>
-<span class="cstat-no" title="statement not covered" >        err = new NotFoundError(</span>
+<span class="cstat-no" title="statement not covered">  this.db.get(key, options, <span class="fstat-no" title="function not covered">function (err, value) {</span></span>
+<span class="cstat-no" title="statement not covered">    if (err) {</span>
+<span class="cstat-no" title="statement not covered">      if ((/notfound/i).test(err) || err.notFound) {</span>
+<span class="cstat-no" title="statement not covered">        err = new NotFoundError(</span>
             'Key not found in database [' + key_ + ']', err)
       } else {
-<span class="cstat-no" title="statement not covered" >        err = new ReadError(err)</span>
+<span class="cstat-no" title="statement not covered">        err = new ReadError(err)</span>
       }
-<span class="cstat-no" title="statement not covered" >      return dispatchError(self, err, callback)</span>
+<span class="cstat-no" title="statement not covered">      return dispatchError(self, err, callback)</span>
     }
-<span class="cstat-no" title="statement not covered" >    if (callback) {</span>
-<span class="cstat-no" title="statement not covered" >      try {</span>
-<span class="cstat-no" title="statement not covered" >        value = self._codec.decodeValue(value, options)</span>
+<span class="cstat-no" title="statement not covered">    if (callback) {</span>
+<span class="cstat-no" title="statement not covered">      try {</span>
+<span class="cstat-no" title="statement not covered">        value = self._codec.decodeValue(value, options)</span>
       } catch (e) {
-<span class="cstat-no" title="statement not covered" >        return callback(new EncodingError(e))</span>
+<span class="cstat-no" title="statement not covered">        return callback(new EncodingError(e))</span>
       }
-<span class="cstat-no" title="statement not covered" >      callback(null, value)</span>
+<span class="cstat-no" title="statement not covered">      callback(null, value)</span>
     }
   })
 }
 &nbsp;
-LevelUP.prototype.put = <span class="fstat-no" title="function not covered" >function (key_, value_, options, callback) {</span>
-<span class="cstat-no" title="statement not covered" >  var self = this</span>
+LevelUP.prototype.put = <span class="fstat-no" title="function not covered">function (key_, value_, options, callback) {</span>
+<span class="cstat-no" title="statement not covered">  var self = this</span>
     , key
     , value
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  callback = getCallback(options, callback)</span>
+<span class="cstat-no" title="statement not covered">  callback = getCallback(options, callback)</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (key_ === null || key_ === undefined)</span>
-<span class="cstat-no" title="statement not covered" >    return writeError(this, 'put() requires a key argument', callback)</span>
+<span class="cstat-no" title="statement not covered">  if (key_ === null || key_ === undefined)</span>
+<span class="cstat-no" title="statement not covered">    return writeError(this, 'put() requires a key argument', callback)</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (maybeError(this, options, callback))</span>
-<span class="cstat-no" title="statement not covered" >    return</span>
+<span class="cstat-no" title="statement not covered">  if (maybeError(this, options, callback))</span>
+<span class="cstat-no" title="statement not covered">    return</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  options = getOptions(options)</span>
-<span class="cstat-no" title="statement not covered" >  key     = this._codec.encodeKey(key_, options)</span>
-<span class="cstat-no" title="statement not covered" >  value   = this._codec.encodeValue(value_, options)</span>
+<span class="cstat-no" title="statement not covered">  options = getOptions(options)</span>
+<span class="cstat-no" title="statement not covered">  key     = this._codec.encodeKey(key_, options)</span>
+<span class="cstat-no" title="statement not covered">  value   = this._codec.encodeValue(value_, options)</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  this.db.put(key, value, options, <span class="fstat-no" title="function not covered" >function (err) {</span></span>
-<span class="cstat-no" title="statement not covered" >    if (err) {</span>
-<span class="cstat-no" title="statement not covered" >      return dispatchError(self, new WriteError(err), callback)</span>
+<span class="cstat-no" title="statement not covered">  this.db.put(key, value, options, <span class="fstat-no" title="function not covered">function (err) {</span></span>
+<span class="cstat-no" title="statement not covered">    if (err) {</span>
+<span class="cstat-no" title="statement not covered">      return dispatchError(self, new WriteError(err), callback)</span>
     } else {
-<span class="cstat-no" title="statement not covered" >      self.emit('put', key_, value_)</span>
-<span class="cstat-no" title="statement not covered" >      if (callback)</span>
-<span class="cstat-no" title="statement not covered" >        callback()</span>
+<span class="cstat-no" title="statement not covered">      self.emit('put', key_, value_)</span>
+<span class="cstat-no" title="statement not covered">      if (callback)</span>
+<span class="cstat-no" title="statement not covered">        callback()</span>
     }
   })
 }
 &nbsp;
-LevelUP.prototype.del = <span class="fstat-no" title="function not covered" >function (key_, options, callback) {</span>
-<span class="cstat-no" title="statement not covered" >  var self = this</span>
+LevelUP.prototype.del = <span class="fstat-no" title="function not covered">function (key_, options, callback) {</span>
+<span class="cstat-no" title="statement not covered">  var self = this</span>
     , key
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  callback = getCallback(options, callback)</span>
+<span class="cstat-no" title="statement not covered">  callback = getCallback(options, callback)</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (key_ === null || key_ === undefined)</span>
-<span class="cstat-no" title="statement not covered" >    return writeError(this, 'del() requires a key argument', callback)</span>
+<span class="cstat-no" title="statement not covered">  if (key_ === null || key_ === undefined)</span>
+<span class="cstat-no" title="statement not covered">    return writeError(this, 'del() requires a key argument', callback)</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (maybeError(this, options, callback))</span>
-<span class="cstat-no" title="statement not covered" >    return</span>
+<span class="cstat-no" title="statement not covered">  if (maybeError(this, options, callback))</span>
+<span class="cstat-no" title="statement not covered">    return</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  options = getOptions(options)</span>
-<span class="cstat-no" title="statement not covered" >  key     = this._codec.encodeKey(key_, options)</span>
+<span class="cstat-no" title="statement not covered">  options = getOptions(options)</span>
+<span class="cstat-no" title="statement not covered">  key     = this._codec.encodeKey(key_, options)</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  this.db.del(key, options, <span class="fstat-no" title="function not covered" >function (err) {</span></span>
-<span class="cstat-no" title="statement not covered" >    if (err) {</span>
-<span class="cstat-no" title="statement not covered" >      return dispatchError(self, new WriteError(err), callback)</span>
+<span class="cstat-no" title="statement not covered">  this.db.del(key, options, <span class="fstat-no" title="function not covered">function (err) {</span></span>
+<span class="cstat-no" title="statement not covered">    if (err) {</span>
+<span class="cstat-no" title="statement not covered">      return dispatchError(self, new WriteError(err), callback)</span>
     } else {
-<span class="cstat-no" title="statement not covered" >      self.emit('del', key_)</span>
-<span class="cstat-no" title="statement not covered" >      if (callback)</span>
-<span class="cstat-no" title="statement not covered" >        callback()</span>
+<span class="cstat-no" title="statement not covered">      self.emit('del', key_)</span>
+<span class="cstat-no" title="statement not covered">      if (callback)</span>
+<span class="cstat-no" title="statement not covered">        callback()</span>
     }
   })
 }
 &nbsp;
-LevelUP.prototype.batch = <span class="fstat-no" title="function not covered" >function (arr_, options, callback) {</span>
-<span class="cstat-no" title="statement not covered" >  var self = this</span>
+LevelUP.prototype.batch = <span class="fstat-no" title="function not covered">function (arr_, options, callback) {</span>
+<span class="cstat-no" title="statement not covered">  var self = this</span>
     , keyEnc
     , valueEnc
     , arr
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!arguments.length)</span>
-<span class="cstat-no" title="statement not covered" >    return new Batch(this, this._codec)</span>
+<span class="cstat-no" title="statement not covered">  if (!arguments.length)</span>
+<span class="cstat-no" title="statement not covered">    return new Batch(this, this._codec)</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  callback = getCallback(options, callback)</span>
+<span class="cstat-no" title="statement not covered">  callback = getCallback(options, callback)</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!Array.isArray(arr_))</span>
-<span class="cstat-no" title="statement not covered" >    return writeError(this, 'batch() requires an array argument', callback)</span>
+<span class="cstat-no" title="statement not covered">  if (!Array.isArray(arr_))</span>
+<span class="cstat-no" title="statement not covered">    return writeError(this, 'batch() requires an array argument', callback)</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (maybeError(this, options, callback))</span>
-<span class="cstat-no" title="statement not covered" >    return</span>
+<span class="cstat-no" title="statement not covered">  if (maybeError(this, options, callback))</span>
+<span class="cstat-no" title="statement not covered">    return</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  options  = getOptions(options)</span>
-<span class="cstat-no" title="statement not covered" >  arr      = self._codec.encodeBatch(arr_, options)</span>
-<span class="cstat-no" title="statement not covered" >  arr      = arr.map(<span class="fstat-no" title="function not covered" >function (op) {</span></span>
-<span class="cstat-no" title="statement not covered" >    if (!op.type &amp;&amp; op.key !== undefined &amp;&amp; op.value !== undefined)</span>
-<span class="cstat-no" title="statement not covered" >      op.type = 'put'</span>
-<span class="cstat-no" title="statement not covered" >    return op</span>
+<span class="cstat-no" title="statement not covered">  options  = getOptions(options)</span>
+<span class="cstat-no" title="statement not covered">  arr      = self._codec.encodeBatch(arr_, options)</span>
+<span class="cstat-no" title="statement not covered">  arr      = arr.map(<span class="fstat-no" title="function not covered">function (op) {</span></span>
+<span class="cstat-no" title="statement not covered">    if (!op.type &amp;&amp; op.key !== undefined &amp;&amp; op.value !== undefined)</span>
+<span class="cstat-no" title="statement not covered">      op.type = 'put'</span>
+<span class="cstat-no" title="statement not covered">    return op</span>
   })
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  this.db.batch(arr, options, <span class="fstat-no" title="function not covered" >function (err) {</span></span>
-<span class="cstat-no" title="statement not covered" >    if (err) {</span>
-<span class="cstat-no" title="statement not covered" >      return dispatchError(self, new WriteError(err), callback)</span>
+<span class="cstat-no" title="statement not covered">  this.db.batch(arr, options, <span class="fstat-no" title="function not covered">function (err) {</span></span>
+<span class="cstat-no" title="statement not covered">    if (err) {</span>
+<span class="cstat-no" title="statement not covered">      return dispatchError(self, new WriteError(err), callback)</span>
     } else {
-<span class="cstat-no" title="statement not covered" >      self.emit('batch', arr_)</span>
-<span class="cstat-no" title="statement not covered" >      if (callback)</span>
-<span class="cstat-no" title="statement not covered" >        callback()</span>
+<span class="cstat-no" title="statement not covered">      self.emit('batch', arr_)</span>
+<span class="cstat-no" title="statement not covered">      if (callback)</span>
+<span class="cstat-no" title="statement not covered">        callback()</span>
     }
   })
 }
 &nbsp;
-LevelUP.prototype.approximateSize = deprecate(<span class="fstat-no" title="function not covered" >function (start_, end_, options, callback) {   </span>
-<span class="cstat-no" title="statement not covered" >  var self = this    </span>
+LevelUP.prototype.approximateSize = deprecate(<span class="fstat-no" title="function not covered">function (start_, end_, options, callback) {   </span>
+<span class="cstat-no" title="statement not covered">  var self = this    </span>
     , start    
     , end    
    
-<span class="cstat-no" title="statement not covered" >  callback = getCallback(options, callback)    </span>
+<span class="cstat-no" title="statement not covered">  callback = getCallback(options, callback)    </span>
    
-<span class="cstat-no" title="statement not covered" >  options = getOptions(options)    </span>
+<span class="cstat-no" title="statement not covered">  options = getOptions(options)    </span>
    
-<span class="cstat-no" title="statement not covered" >  if (start_ === null || start_ === undefined    </span>
+<span class="cstat-no" title="statement not covered">  if (start_ === null || start_ === undefined    </span>
         || end_ === null || end_ === undefined || 'function' !== typeof callback)    
-<span class="cstat-no" title="statement not covered" >    return readError(this, 'approximateSize() requires start, end and callback arguments', callback)   </span>
+<span class="cstat-no" title="statement not covered">    return readError(this, 'approximateSize() requires start, end and callback arguments', callback)   </span>
    
-<span class="cstat-no" title="statement not covered" >  start = this._codec.encodeKey(start_, options)   </span>
-<span class="cstat-no" title="statement not covered" >  end   = this._codec.encodeKey(end_, options)   </span>
+<span class="cstat-no" title="statement not covered">  start = this._codec.encodeKey(start_, options)   </span>
+<span class="cstat-no" title="statement not covered">  end   = this._codec.encodeKey(end_, options)   </span>
    
-<span class="cstat-no" title="statement not covered" >  this.db.approximateSize(start, end, <span class="fstat-no" title="function not covered" >function (err, size) {   </span></span>
-<span class="cstat-no" title="statement not covered" >    if (err) {   </span>
-<span class="cstat-no" title="statement not covered" >      return dispatchError(self, new OpenError(err), callback)   </span>
-    } else <span class="cstat-no" title="statement not covered" >if (callback) {   </span>
-<span class="cstat-no" title="statement not covered" >      callback(null, size)   </span>
+<span class="cstat-no" title="statement not covered">  this.db.approximateSize(start, end, <span class="fstat-no" title="function not covered">function (err, size) {   </span></span>
+<span class="cstat-no" title="statement not covered">    if (err) {   </span>
+<span class="cstat-no" title="statement not covered">      return dispatchError(self, new OpenError(err), callback)   </span>
+    } else <span class="cstat-no" title="statement not covered">if (callback) {   </span>
+<span class="cstat-no" title="statement not covered">      callback(null, size)   </span>
     }    
   })   
 }, 'db.approximateSize() is deprecated. Use db.db.approximateSize() instead')
 &nbsp;
 LevelUP.prototype.readStream =
-LevelUP.prototype.createReadStream = <span class="fstat-no" title="function not covered" >function (options) {</span>
-<span class="cstat-no" title="statement not covered" >  options = extend( {keys: true, values: true}, this.options, options)</span>
+LevelUP.prototype.createReadStream = <span class="fstat-no" title="function not covered">function (options) {</span>
+<span class="cstat-no" title="statement not covered">  options = extend( {keys: true, values: true}, this.options, options)</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  options.keyEncoding   = options.keyEncoding</span>
-<span class="cstat-no" title="statement not covered" >  options.valueEncoding = options.valueEncoding</span>
+<span class="cstat-no" title="statement not covered">  options.keyEncoding   = options.keyEncoding</span>
+<span class="cstat-no" title="statement not covered">  options.valueEncoding = options.valueEncoding</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  options = this._codec.encodeLtgt(options);</span>
-<span class="cstat-no" title="statement not covered" >  options.keyAsBuffer   = this._codec.keyAsBuffer(options)</span>
-<span class="cstat-no" title="statement not covered" >  options.valueAsBuffer = this._codec.valueAsBuffer(options)</span>
+<span class="cstat-no" title="statement not covered">  options = this._codec.encodeLtgt(options);</span>
+<span class="cstat-no" title="statement not covered">  options.keyAsBuffer   = this._codec.keyAsBuffer(options)</span>
+<span class="cstat-no" title="statement not covered">  options.valueAsBuffer = this._codec.valueAsBuffer(options)</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if ('number' !== typeof options.limit)</span>
-<span class="cstat-no" title="statement not covered" >    options.limit = -1</span>
+<span class="cstat-no" title="statement not covered">  if ('number' !== typeof options.limit)</span>
+<span class="cstat-no" title="statement not covered">    options.limit = -1</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return new IteratorStream(this.db.iterator(options), extend(options, {</span>
+<span class="cstat-no" title="statement not covered">  return new IteratorStream(this.db.iterator(options), extend(options, {</span>
     decoder: this._codec.createStreamDecoder(options)
   }))
 }
 &nbsp;
 LevelUP.prototype.keyStream =
-LevelUP.prototype.createKeyStream = <span class="fstat-no" title="function not covered" >function (options) {</span>
-<span class="cstat-no" title="statement not covered" >  return this.createReadStream(extend(options, { keys: true, values: false }))</span>
+LevelUP.prototype.createKeyStream = <span class="fstat-no" title="function not covered">function (options) {</span>
+<span class="cstat-no" title="statement not covered">  return this.createReadStream(extend(options, { keys: true, values: false }))</span>
 }
 &nbsp;
 LevelUP.prototype.valueStream =
-LevelUP.prototype.createValueStream = <span class="fstat-no" title="function not covered" >function (options) {</span>
-<span class="cstat-no" title="statement not covered" >  return this.createReadStream(extend(options, { keys: false, values: true }))</span>
+LevelUP.prototype.createValueStream = <span class="fstat-no" title="function not covered">function (options) {</span>
+<span class="cstat-no" title="statement not covered">  return this.createReadStream(extend(options, { keys: false, values: true }))</span>
 }
 &nbsp;
-LevelUP.prototype.toString = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >  return 'LevelUP'</span>
+LevelUP.prototype.toString = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">  return 'LevelUP'</span>
 }
 &nbsp;
 function utilStatic (name) {
-  return <span class="fstat-no" title="function not covered" >function (location, callback) {</span>
-<span class="cstat-no" title="statement not covered" >    getLevelDOWN()[name](location, callback || <span class="fstat-no" title="function not covered" >function () {</span>})</span>
+  return <span class="fstat-no" title="function not covered">function (location, callback) {</span>
+<span class="cstat-no" title="statement not covered">    getLevelDOWN()[name](location, callback || <span class="fstat-no" title="function not covered">function () {</span>})</span>
   }
 }
 &nbsp;
@@ -1415,10 +1413,11 @@ module.exports.repair  = deprecate(
 &nbsp;
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 11:44:46 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Mon Apr 17 2017 11:54:35 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
