@@ -1,4 +1,7 @@
-# test coverage for  [levelup (v1.3.5)](https://github.com/level/levelup)  [![npm package](https://img.shields.io/npm/v/npmtest-levelup.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-levelup) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-levelup.svg)](https://travis-ci.org/npmtest/node-npmtest-levelup)
+# npmtest-levelup
+
+#### basic test coverage for  [levelup (v1.3.5)](https://github.com/level/levelup)  [![npm package](https://img.shields.io/npm/v/npmtest-levelup.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-levelup) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-levelup.svg)](https://travis-ci.org/npmtest/node-npmtest-levelup)
+
 #### Fast & simple storage - a Node.js-style LevelDB wrapper
 
 [![NPM](https://nodei.co/npm/levelup.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/levelup)
